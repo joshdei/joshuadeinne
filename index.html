@@ -4,40 +4,207 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joshua Deinne Portfolio</title>
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Body & Background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Video background */
+#bg-video {
+  position: fixed;
+  right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+
+/* Falling stars canvas */
+#stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+/* Parallax Sections */
+.parallax {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Header */
+header.parallax img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+h1 { font-size: 2.5rem; text-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0; }
+h2 { font-size: 2rem; margin-bottom: 20px; }
+p { font-size: 1rem; line-height: 1.6; }
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 5px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg,#00fff0,#0066ff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0;
+}
+.button i { margin-right: 8px; }
+.button:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 20px #00fff0, 0 0 40px #00fff0;
+}
+
+/* Header Buttons in one line */
+.header-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* About Me Box */
+#bio .container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00fff0;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  p { font-size: 0.9rem; }
+  header.parallax img { width: 120px; height: 120px; }
+  #bio .container { padding: 20px; margin: 20px; }
+  .button { padding: 10px 18px; font-size: 0.9rem; }
+}
+</style>
 </head>
 <body>
 
-<div class="water"></div>
+<!-- Video Background -->
+<video autoplay muted loop id="bg-video">
+  <source src="assets/water.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-<header>
+<!-- Falling stars -->
+<canvas id="stars"></canvas>
+
+<!-- Header -->
+<header class="parallax">
   <h1>Joshua Deinne</h1>
+  <img src="assets/joshuaA.jpg" alt="Joshua Deinne">
   <p>Software Developer | Game & Web Designer | AI Enthusiast</p>
-  <a href="#bio" class="button">View My Bio</a>
+  
+  <a href="#bio" class="button"><i class="fa-solid fa-user"></i>Read My Full Bio</a>
+  
+  <div class="header-buttons">
+    <a href="assets/joshuadeinne.pdf" class="button"><i class="fa-solid fa-file"></i>Download CV</a>
+    <a href="https://www.linkedin.com/in/joshua-deinne-53505a373/" target="_blank" class="button"><i class="fab fa-linkedin"></i>LinkedIn</a>
+    <a href="https://x.com/joshdeix" target="_blank" class="button"><i class="fab fa-x-twitter"></i>X / Twitter</a>
+    <a href="tel:+2348135836125" class="button"><i class="fa-solid fa-phone"></i>Call Me</a>
+    <a href="https://wa.me/2348135836125" target="_blank" class="button"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+    <a href="mailto:joshuadeinne@gmail.com" class="button"><i class="fa-solid fa-envelope"></i>Gmail</a>
+  </div>
 </header>
 
-<section id="bio">
+
+<!-- Full Bio Section -->
+<section id="bio" class="parallax">
   <div class="container">
     <h2>About Me</h2>
-    <p>Hello! I'm Joshua, a forward-thinking developer passionate about web, games, AI, and interactive design. I love creating experiences that are visually stunning and functionally smooth.</p>
+    <p>
+      Hello! I'm <strong>Joshua Deinne</strong>, a software developer and designer passionate about web, games, and AI.  
+      <br><br>
+      I work with <strong>HTML, CSS, JavaScript, Laravel</strong>, <strong>Python</strong>, and <strong>Three.js</strong> to create smooth, interactive, and modern digital experiences.  
+      <br><br>
+      I love bringing creativity to technology and making designs that feel alive and engaging.
+    </p>
+
+    <h3 style="margin-top: 20px;">Some of My Projects:</h3>
+    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+      <li><a href="https://psalmedu.com/" target="_blank" class="button" style="margin:5px;"><i class="fa-solid fa-globe"></i> Psalmedu</a></li>
+      <li><a href="https://24finder.ng/" target="_blank" class="button" style="margin:5px;"><i class="fa-solid fa-globe"></i> 24Finder</a></li>
+
+      <li><span class="button" style="margin:5px;"><i class="fa-solid fa-shopping-cart"></i> E-commerce Project</span></li>
+    </ul>
   </div>
 </section>
 
-<section id="cv">
-  <div class="container">
-    <h2>My CV</h2>
-    <p>Download my CV <a href="assets/your_cv.pdf" class="button">here</a>.</p>
-  </div>
-</section>
-
-<section id="contact">
+<!-- Contact Section -->
+<section id="contact" class="parallax">
   <div class="container">
     <h2>Contact</h2>
     <p>Email: joshuadeinne@gmail.com</p>
-    <p>WhatsApp: +234XXXXXXXXXX</p>
+    <p>WhatsApp: +2348135836125</p>
   </div>
 </section>
 
-<script src="script.js"></script>
+<script>
+// Falling stars effect
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+for(let i=0;i<200;i++){
+  stars.push({
+    x: Math.random()*canvas.width,
+    y: Math.random()*canvas.height,
+    r: Math.random()*1.5+0.5,
+    d: Math.random()*2
+  });
+}
+
+function drawStars(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = '#fff';
+  ctx.shadowColor = '#00fff0';
+  ctx.shadowBlur = 5;
+  for(let i=0;i<stars.length;i++){
+    const s = stars[i];
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fill();
+    s.y += s.d;
+    if(s.y > canvas.height) s.y = 0;
+  }
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+window.addEventListener('resize',()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
 </body>
 </html>
